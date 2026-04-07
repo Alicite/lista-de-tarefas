@@ -9,12 +9,12 @@ const verificarBD = () => {
 
 }
 
-const criarTarefa = (texto) => {
+const criarTarefa = (texto, indice) => {
     const listaDeTarefas = document.querySelector('#lista-de-tarefas')
     const tarefa = document.createElement('li')
     
     tarefa.classList.add('tarefa')
-    tarefa.dataset.chave = tarefasAtuais.length + 1
+    tarefa.dataset.chave = indice
     tarefa.innerHTML = `${texto} <input type="button" value="❌" class="bt">`
     listaDeTarefas.appendChild(tarefa)
 };
@@ -26,9 +26,10 @@ const addTarefa = (texto) => {
 }
 
 const tarefasAtuais = verificarBD();
-tarefasAtuais.forEach((tarefa) => criarTarefa(tarefa))
+tarefasAtuais.forEach((tarefa, i) => criarTarefa(tarefa, i))
 
 const btEnviar = document.querySelector('#bt-enviar')
+const inputTarefa = document.querySelector('#input-tarefa')
 
 btEnviar.addEventListener('click', () => {
     const textoTarefa = document.querySelector('#input-tarefa').value
@@ -36,18 +37,21 @@ btEnviar.addEventListener('click', () => {
     if (textoTarefa === ''){
         alert('Insira uma tarefa antes de adicionar!')
     } else {
+        criarTarefa(textoTarefa, tarefasAtuais.length)
         addTarefa(textoTarefa)
-        criarTarefa(textoTarefa)
     }
 })
 
-// btEnviar.addEventListener('keypress', (evento) => {
-//     evento.preventDefault()
-//     if (evento.key === 'enter'){
-//         const textoTarefa = evento.target.value
-//         if (textoTarefa === ''){
-//             alert('Insira uma tarefa antes de adicionar!')
-//         }
-//         criarTarefa(textoTarefa)
-//     }
-// })
+inputTarefa.addEventListener('keyup', (evento) => {
+    const teclaPress = evento.key
+    if (teclaPress == 'Enter') {
+        const textoTarefa = document.querySelector('#input-tarefa').value
+        
+        if (textoTarefa === ''){
+            alert('Insira uma tarefa antes de adicionar!')
+        } else {
+            criarTarefa(textoTarefa, tarefasAtuais.length)
+            addTarefa(textoTarefa)
+        }
+    }
+})
