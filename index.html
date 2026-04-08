@@ -4,23 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tarefas</title>
-    <style>
-        #input-tarefa{
-            width: 50%;
-        }
-
-        .bt{
-            border-radius: 20%;
-            background-color: black;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <h1>Lista de Tarefas</h1>
-    <label>Insira a tarefa:
+    <label id="label-tarefa">Insira a tarefa:
         <input type="text" id="input-tarefa">
         <input type="button" value="✔️" class="bt" id="bt-enviar">
-        <input type="button" value="🧹" class="bt" id="bt-limpar">
     </label>
     <section>
         <ul id="lista-de-tarefas"></ul>

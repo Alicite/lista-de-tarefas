@@ -1,0 +1,24 @@
+#input-tarefa{
+    width: 50%;
+}
+
+.bt{
+    margin-left: 5px;
+    border-radius: 20%;
+    background-color: black;
+}
+
+#lista-de-tarefas{
+    list-style-type: none;
+}
+
+.texto-tarefa-marcada{
+    text-decoration: line-through;
+}
+
+li{
+    padding: 3px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
