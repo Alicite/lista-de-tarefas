@@ -1,11 +1,5 @@
 #input-tarefa{
-    width: 50%;
-}
-
-.bt{
-    margin-left: 5px;
-    border-radius: 20%;
-    background-color: black;
+    width: 70%;
 }
 
 #lista-de-tarefas{
@@ -20,5 +14,65 @@ li{
     padding: 3px;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.bt {
+    margin-left: 5px;
+    border-radius: 8px; /* Bordas um pouco mais suaves que 20% */
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.2s ease; /* Efeito suave ao passar o mouse */
+    font-size: 1rem;
+}
+
+.bt:active {
+    transform: scale(0.90);
+}
+
+#bt-enviar {
+    background-color: #28a745; 
+}
+
+#bt-enviar:hover {
+    background-color: #218838;
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.4);
+}
+
+#bt-limpar {
+    background-color: #fd7e14; 
+}
+
+#bt-limpar:hover {
+    background-color: #e36a07;
+    box-shadow: 0 0 8px rgba(253, 126, 20, 0.4);
+}
+
+.tarefa .bt {
+    background-color: #dc3545; 
+    margin-left: auto; 
+}
+
+.tarefa .bt:hover {
+    background-color: #c82333;
+}
+
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.texto-tarefa-marcada, .texto-tarefa, h1, label {
+    display: flex;
+    font-family: sans-serif;
+    color: #333;
+    justify-content: center;
     align-items: center;
 }
