@@ -76,3 +76,35 @@ input[type="checkbox"] {
     justify-content: center;
     align-items: center;
 }
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background-fixo {
+  background-image: url('cedup.jpg');
+  background-attachment: fixed; /* Fundo estático */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo-borrado {
+  /* Define a cor de fundo com transparência (rgba) */
+  background-color: rgba(255, 255, 255, 0.3); /* Branco opaco */
+  
+  /* Aplica o desfoque apenas atrás deste elemento */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+  
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Garante que o texto fique nítido */
+  color: #000;
+}
