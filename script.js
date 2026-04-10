@@ -14,9 +14,11 @@ const limparLista = () => {
         listaDeTarefas.removeChild(listaDeTarefas.lastChild)
     }
     
-    const labelTarefa = document.querySelector('#label-tarefa')
-    
-    labelTarefa.removeChild(labelTarefa.lastChild)
+    if (document.querySelector('#bt-limpar') != null){
+        const labelTarefa = document.querySelector('#label-tarefa')
+        
+        labelTarefa.removeChild(labelTarefa.lastChild)
+    }
 }
 
 const atualizarLista = () => {
