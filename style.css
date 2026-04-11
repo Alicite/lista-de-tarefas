@@ -1,9 +1,45 @@
+body {
+    background-image: url('cedup.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteudo-borrado {
+    width: 80%;
+    background-color: rgba(15, 15, 15, 0.21);
+    backdrop-filter: blur(10px);
+    padding: 21px;
+    margin-top: 21px;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.texto-tarefa-marcada, .texto-tarefa, h1, label, #sem-tarefas, .rodape {
+    display: flex;
+    font-family: sans-serif;
+    color: #f1f1f1;
+    justify-content: center;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.42);
+}
+
 #input-tarefa{
     width: 70%;
+    height: 23px;
+    box-shadow: inset 5px 3px 5px rgba(255, 255, 255, 0.42), inset -1px -2px 3px rgba(0, 0, 0, 0.21);
 }
 
 #lista-de-tarefas{
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .texto-tarefa-marcada{
@@ -13,21 +49,26 @@
 li{
     padding: 3px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    margin-right: 50px;
+    box-shadow: inset 5px 3px 5px rgba(255, 255, 255, 0.21), inset -1px -2px 3px rgba(0, 0, 0, 0.42);
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.21);
+    border-radius: 5px;
+    transform: scale(1.012);
 }
 
 .bt {
-    margin-left: 5px;
-    border-radius: 8px; /* Bordas um pouco mais suaves que 20% */
+    border-radius: 8px;
     cursor: pointer;
     border: none;
-    color: white;
-    font-weight: bold;
-    padding: 5px 10px;
-    transition: all 0.2s ease; /* Efeito suave ao passar o mouse */
+    transition: all 0.2s ease;
     font-size: 1rem;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 5px 3px 5px rgba(255, 255, 255, 0.21), inset -1px -2px 3px rgba(0, 0, 0, 0.42);
 }
 
 .bt:active {
@@ -54,57 +95,42 @@ li{
 
 .tarefa .bt {
     background-color: #dc3545; 
-    margin-left: auto; 
 }
 
 .tarefa .bt:hover {
     background-color: #c82333;
 }
 
-
 input[type="checkbox"] {
-    margin-right: 10px;
     cursor: pointer;
-    width: 18px;
-    height: 18px;
+    width: 21px;
+    height: 21px;
+    box-shadow: inset 5px 3px 5px rgba(0, 0, 0, 0.21), inset -1px -2px 3px rgba(255, 255, 255, 0.42);
 }
 
-.texto-tarefa-marcada, .texto-tarefa, h1, label {
-    display: flex;
-    font-family: sans-serif;
-    color: #333;
-    justify-content: center;
-    align-items: center;
+input[type="checkbox"]:checked{
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    box-shadow: inset 5px 3px 5px rgba(255, 255, 255, 0.42), inset -1px -2px 3px rgba(0, 0, 0, 0.21);
 }
 
-body, html {
-  height: 100%;
-  margin: 0;
+.tarefa-marcada {
+    background-color: rgba(0, 0, 0, 0.21);
 }
 
-.background-fixo {
-  background-image: url('cedup.jpg');
-  background-attachment: fixed; /* Fundo estático */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.texto-tarefa-marcada {
+    color: black;
+    text-shadow: none;
 }
 
-.conteudo-borrado {
-  /* Define a cor de fundo com transparência (rgba) */
-  background-color: rgba(255, 255, 255, 0.3); /* Branco opaco */
-  
-  /* Aplica o desfoque apenas atrás deste elemento */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-  
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  
-  /* Garante que o texto fique nítido */
-  color: #000;
+.rodape {
+    margin-top: 21px;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 80%;
+    background-color: rgba(15, 15, 15, 0.21);
+    backdrop-filter: blur(10px);
+    padding: 21px;
+    border-radius: 10px;
 }

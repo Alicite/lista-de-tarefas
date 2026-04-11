@@ -24,7 +24,12 @@ const limparLista = () => {
 const atualizarLista = () => {
     localStorage.setItem('tarefasSalvas', JSON.stringify(tarefasAtuais))
     limparLista()
+    tarefasAtuais.sort((a, b) => a.status.localeCompare(b.status))
     tarefasAtuais.forEach((tarefa, i) => criarTarefa(tarefa.texto, i, tarefa.status))
+
+    if (!tarefasAtuais[0]){
+        listaDeTarefas.innerHTML = `<p id="sem-tarefas">Nenhuma tarefa encontrada...</p>`
+    }
     
     if (tarefasAtuais[0] && document.querySelector('#bt-limpar') == null){
         const labelTarefa = document.querySelector('#label-tarefa')
@@ -52,7 +57,8 @@ const criarTarefa = (texto, indice, status) => {
     if (status === ''){
         tarefa.innerHTML = `<input type="checkbox" data-chave="${indice}"><div class='texto-tarefa'> ${texto} </div><input type="button" value="❌" class="bt" data-chave="${indice}">`
     } else {
-        tarefa.innerHTML = `<input type="checkbox"${status} data-chave="${indice}"><div class='texto-tarefa-marcada'> ${texto} </div><input type="button" value="❌" class="bt" data-chave="${indice}">`
+        tarefa.classList.add('tarefa-marcada')
+        tarefa.innerHTML = `<input type="checkbox" ${status} data-chave="${indice}"><div class='texto-tarefa-marcada'> ${texto} </div><input type="button" value="❌" class="bt" data-chave="${indice}">`
     }
     
     listaDeTarefas.appendChild(tarefa)
