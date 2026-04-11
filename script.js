@@ -53,6 +53,7 @@ const criarTarefa = (texto, indice, status) => {
     const tarefa = document.createElement('li')
     
     tarefa.classList.add('tarefa')
+    tarefa.dataset.chave = indice
 
     if (status === ''){
         tarefa.innerHTML = `<input type="checkbox" data-chave="${indice}"><div class='texto-tarefa'> ${texto} </div><input type="button" value="❌" class="bt" data-chave="${indice}">`
@@ -111,7 +112,7 @@ listaDeTarefas.addEventListener('click', (evento) => {
         tarefasAtuais.splice(chave, 1)
         
         atualizarLista()
-    } else if (alvoDoClique.type === 'checkbox'){
+    } else if (alvoDoClique.type === 'checkbox' || alvoDoClique.classList.contains('tarefa')){
         if (tarefasAtuais[chave].status === ''){
             tarefasAtuais[chave].status = 'checked'
         } else {
